@@ -6,8 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		BA7B2DD4BAE975432E6C841B /* Pods_Demo_Pixlr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E20911C33C5ED041E49BD3 /* Pods_Demo_Pixlr.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		53E20911C33C5ED041E49BD3 /* Pods_Demo_Pixlr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo_Pixlr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		722058A82D8DD1E800AC94CD /* Demo_Pixlr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo_Pixlr.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBA2E97814690F9F2325764A /* Pods-Demo_Pixlr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo_Pixlr.debug.xcconfig"; path = "Target Support Files/Pods-Demo_Pixlr/Pods-Demo_Pixlr.debug.xcconfig"; sourceTree = "<group>"; };
+		FC591D3045BE368284E6505C /* Pods-Demo_Pixlr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo_Pixlr.release.xcconfig"; path = "Target Support Files/Pods-Demo_Pixlr/Pods-Demo_Pixlr.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -36,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA7B2DD4BAE975432E6C841B /* Pods_Demo_Pixlr.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		510E4357AAE6C6AEFFC34DEE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EBA2E97814690F9F2325764A /* Pods-Demo_Pixlr.debug.xcconfig */,
+				FC591D3045BE368284E6505C /* Pods-Demo_Pixlr.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		66212B1EC2477D7A1312678E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				53E20911C33C5ED041E49BD3 /* Pods_Demo_Pixlr.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7220589F2D8DD1E800AC94CD = {
 			isa = PBXGroup;
 			children = (
 				722058AA2D8DD1E800AC94CD /* Demo_Pixlr */,
 				722058A92D8DD1E800AC94CD /* Products */,
+				510E4357AAE6C6AEFFC34DEE /* Pods */,
+				66212B1EC2477D7A1312678E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,9 +92,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 722058BB2D8DD1EA00AC94CD /* Build configuration list for PBXNativeTarget "Demo_Pixlr" */;
 			buildPhases = (
+				7CC91B101655B1233A6452E9 /* [CP] Check Pods Manifest.lock */,
 				722058A42D8DD1E800AC94CD /* Sources */,
 				722058A52D8DD1E800AC94CD /* Frameworks */,
 				722058A62D8DD1E800AC94CD /* Resources */,
+				7CE70251A0CF416F51FF72D4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -77,8 +106,6 @@
 				722058AA2D8DD1E800AC94CD /* Demo_Pixlr */,
 			);
 			name = Demo_Pixlr;
-			packageProductDependencies = (
-			);
 			productName = Demo_Pixlr;
 			productReference = 722058A82D8DD1E800AC94CD /* Demo_Pixlr.app */;
 			productType = "com.apple.product-type.application";
@@ -95,6 +122,7 @@
 				TargetAttributes = {
 					722058A72D8DD1E800AC94CD = {
 						CreatedOnToolsVersion = 16.2;
+						LastSwiftMigration = 1620;
 					};
 				};
 			};
@@ -127,6 +155,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7CC91B101655B1233A6452E9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Demo_Pixlr-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7CE70251A0CF416F51FF72D4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Demo_Pixlr/Pods-Demo_Pixlr-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Demo_Pixlr/Pods-Demo_Pixlr-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Demo_Pixlr/Pods-Demo_Pixlr-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		722058A42D8DD1E800AC94CD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -140,12 +210,15 @@
 /* Begin XCBuildConfiguration section */
 		722058BC2D8DD1EA00AC94CD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBA2E97814690F9F2325764A /* Pods-Demo_Pixlr.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GVQ3X8X5LZ;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Demo_Pixlr/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -161,6 +234,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.datbui.Demo-Pixlr";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -168,12 +242,15 @@
 		};
 		722058BD2D8DD1EA00AC94CD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC591D3045BE368284E6505C /* Pods-Demo_Pixlr.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GVQ3X8X5LZ;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Demo_Pixlr/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
